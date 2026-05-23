@@ -41,6 +41,55 @@ public class gallows
             System.out.println("\nСлово: " + new String(guessedLetters));
             System.out.println("Ошибок сделано: " + mistakes + " из " + maxMistakes);
             System.out.print("Введите букву: ");
+
+            //Читаем буквы от "игрока"
+            String input = scanner.nextLine();
+            //Берём первый символ и переводим в нижний регистр
+            char guess = input.toLowerCase().charAt(0);
+            //Проверяем есть ил такая буква в слове
+            boolean letterFound = false;
+            for(int i = 0; i < secretWord.length(); i++)
+            {
+                if(secretWord.charAt(i) == guess)
+                {
+                    guessedLetters[i] = guess;
+                    letterFound = true;
+                }
+            }
+            //Если буквы нет
+            if(!letterFound)
+            {
+                mistakes++;
+                System.out.println("Буквы" + guess + "нету!");
+            }
+            else
+            {
+                System.out.println("Верно! Буква" + guess + "есть в слове!");
+            }
+
+            //Проверяем угадано ли слово
+            wordGuessed = true;
+            for (int i = 0; i < guessedLetters.length; i++)
+            {
+                if (guessedLetters[i] == '_')
+                {
+                    wordGuessed = false;
+                    break;
+                }
+            }
+
+            //ОШИБКА С ВЫПОЛНЕНИЕМ УСЛОВИЙ!
+            //Конец игры
+            scanner.close();
+
+            System.out.println("\n=================================");
+            if (wordGuessed) {
+                System.out.println("Поздравляем! Вы угадали слово: " + secretWord);
+                System.out.println("Вы сделали " + mistakes + " ошибок.");
+            } else {
+                System.out.println("Вы проиграли! Загаданное слово было: " + secretWord);
+            }
+            System.out.println("=================================");
         }
     }
 }
