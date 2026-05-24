@@ -77,19 +77,18 @@ public class gallows
                     break;
                 }
             }
-
-            //ОШИБКА С ВЫПОЛНЕНИЕМ УСЛОВИЙ!
-            //Конец игры
-            scanner.close();
-
-            System.out.println("\n=================================");
-            if (wordGuessed) {
-                System.out.println("Поздравляем! Вы угадали слово: " + secretWord);
-                System.out.println("Вы сделали " + mistakes + " ошибок.");
-            } else {
-                System.out.println("Вы проиграли! Загаданное слово было: " + secretWord);
-            }
-            System.out.println("=================================");
         }
+        //ОШИБКА С ВЫПОЛНЕНИЕМ УСЛОВИЙ!
+        //Конец игры
+        scanner.close();
+
+        System.out.println("\n=================================");
+        if (wordGuessed) {
+            System.out.println("Поздравляем! Вы угадали слово: " + secretWord);
+            System.out.println("Вы сделали " + mistakes + " ошибок.");
+        } else {
+            System.out.println("Вы проиграли! Загаданное слово было: " + secretWord);
+        }
+        System.out.println("=================================");
     }
 }
