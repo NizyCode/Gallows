@@ -78,7 +78,6 @@ public class gallows
                 }
             }
         }
-        //ОШИБКА С ВЫПОЛНЕНИЕМ УСЛОВИЙ!
         //Конец игры
         scanner.close();
 
