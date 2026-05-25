@@ -10,7 +10,8 @@ public class gallows
         String[] words = {"джава", "падаван", "разработка",
                 "программирование", "компьютер", "синтаксис",
                 "цикл", "строка", "бит", "консоль", "репозиторий",
-                "проект", "виселица"};
+                "проект", "виселица", "клавиатура", "дедлайн",
+                "коммит", "процессор"};
 
         //Берём случайное число (номер массива) и возвращаем его
         //Слово под случайным номер и есть загаданное слово
@@ -27,7 +28,7 @@ public class gallows
          //Кол-во ошибок которые сделал игрок
          int mistakes = 0;
          //Макс кол-во ошибок
-         int maxMistakes = 6;
+         int maxMistakes = 5;
          //Флаг угадано ли слово целиком
          boolean wordGuessed = false;
          //включаем наш сканер
@@ -60,11 +61,11 @@ public class gallows
             if(!letterFound)
             {
                 mistakes++;
-                System.out.println("Буквы" + guess + "нету!");
+                System.out.println("Буквы " + guess + " нету!");
             }
             else
             {
-                System.out.println("Верно! Буква" + guess + "есть в слове!");
+                System.out.println("Верно! Буква " + guess + " есть в слове!");
             }
 
             //Проверяем угадано ли слово
@@ -81,11 +82,15 @@ public class gallows
         //Конец игры
         scanner.close();
 
+        //Выводим сообщение в конце игры
         System.out.println("\n=================================");
+        //Если угадали слово
         if (wordGuessed) {
             System.out.println("Поздравляем! Вы угадали слово: " + secretWord);
             System.out.println("Вы сделали " + mistakes + " ошибок.");
-        } else {
+        }
+        //Если нет
+        else {
             System.out.println("Вы проиграли! Загаданное слово было: " + secretWord);
         }
         System.out.println("=================================");
